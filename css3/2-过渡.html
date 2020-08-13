@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 50px;
+      background-color: red;
+      /* transition: width 1s ease; */
+/* 将鼠标悬停在一个div元素上，逐步改变表格的宽度： */
+      transition-property: width;
+/* 属性规定完成过渡效果需要花费的时间（以秒或毫秒计） */
+      transition-duration: 1s;
+/* 指定切换效果的速度。
+ ease	
+规定慢速开始，然后变快，然后慢速结束的过渡效果*/
+      transition-timing-function: ease;
+/* 指定何时将开始切换效果。 */
+      transition-delay: 1s;
+    }
+    .box:hover{
+      width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            position: relative;
+            left: 50%;
+            top: 50%;
+          
+            margin-left: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        oBox.onmousedown = function(event){
+            console.log(oBox.offsetTop,oBox.offsetLeft)
+            var oBox_left =oBox.offsetLeft;
+            var oBox_top =oBox.offsetTop;
+            var pointTop = event.clientY;
+            var pointLeft = event.clientX;
+            var _left = pointLeft-oBox_left;
+            var _top = pointTop-oBox_top;
+
+            document.onmousemove = function(event){
+                // console.log(event.clientX,event.clientY)
+                oBox.style.top =(event.clientY-_top)+ "px";
+                oBox.style.left =(event.clientX-_left) + "px";  
+            }
+        }
+        // 是函数失效只需要将函数再次定义 并且定义为空
+        oBox.onmouseup = function(){
+            document.onmousemove =null
+        }
+    </script>
+</body>
+</html>

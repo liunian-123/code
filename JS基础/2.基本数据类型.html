@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 变量名:数字，字母，_ 下划线, $
+    // 注意: 数字不能作为开头、严格区分大小写、不能使用关键字和保留字
+        var a123 = "123";
+        var A = "123";
+    // 变量名中出现多个单词，一般使用驼峰命名 
+        var testStrArr = "123";
+// 面试题
+        var 你好 = "hello";
+        // 中文名可以使用但是仅限于当前使用，尽量还是不要是用
+        // 应当遵守命名原则
+
+
+// 基本数据类型：String(字符型)、Number(数值型)、Boolean(布尔)、Undefined,null
+        // 都是定义字符型 没有字符和字符串的区分
+        var str = "hello";
+        var str2 = 'hello';
+        var num = 10;
+        var num2 = '10';
+        var boo = true;//false;
+        var und = undefined;
+        var nul = null;
+        //内置名称不可作为名字
+
+        //判断数据类型
+        console.log(typeof(a123));
+// JS是弱类型
+        //随意更改数据类型
+        var a = 10;
+        console.log(typeof(a));
+        a = "hello";
+        console.log(typeof(a));
+
+        // var 允许多次定义
+        var a = 10;
+        var a = 'hello';
+        console.log(a);
+        
+        // var a;
+        // console.log(a);
+
+        // var a = 10,b = 20;
+        // console.log(a,b)
+  
+
+    </script>
+</body>
+</html>

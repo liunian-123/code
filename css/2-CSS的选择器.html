@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        css选择器
+            p        标签选择器
+            #div1    id选择器（id唯一）
+            .aa      class选择器
+            ul .aa   后代选择器
+            ul > .aa 子代选择器
+            :hover   伪类选择器
+            .aa,.bb  群组选择器|分组选择器
+
+
+            选择器的优先级
+            !important  最高
+            内联样式    1000
+            id选择器    100
+            class类选择器 伪类选择器   10
+            标签  1
+        */
+/*标签选择器——标签 或 id*/
+        div{/*标签*/
+            width: 200px;
+            height: 20px;
+            background: royalblue;
+            border: 2px solid red;
+        }
+        #div1{/*id*/
+            width: 200px;
+            height: 20px;
+            background:peru;
+        }
+/*类选择器——class*/
+        .list{
+            width: 200px;
+            height: 20px;
+            background:blue;
+        }
+/*后代选择器*/
+        ul .list{
+            width: 200px;
+            height: 20px;
+            background: yellow;
+            border: 5px solid black;
+        }
+/* 子代选择器 */
+       ul > .list{
+            width: 200px;
+           height: 20px;
+           background: orange; 
+           border: 2px solid #000;
+        }
+/*伪类选择器*/
+        a:hover{
+            background: chartreuse;
+            color: crimson;
+        }
+/*群组选择器 或 分组选择器*/
+        #div1,.list{
+            color: red;
+        }
+        h2{
+            background-color: red !important;
+        }
+        #myh2{
+            background-color: green;
+        }
+        .myh3 span{
+            background-color: red;
+        }
+        #h3span{
+            background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">第一个DIV</div>
+    
+    <ul>
+        <li class="list">11111</li>
+        <li>2222</li>
+        <li class="list">
+            333
+            <div>哈哈</div>
+            <div class="list">呵呵</div>
+        </li>
+    </ul>
+    <a href="http://www.baidu.com">百度</a>
+
+    <h2 id="myh2" style="background-color: hotpink;">我是h2</h2>
+    <h3 class="myh3">
+        <span id="h3span">我是h3</span>
+    </h3>
+
+</body>
+</html>

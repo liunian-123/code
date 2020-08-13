@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .small-img,.big-img {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .small-img img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .small-img .mosk {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.5);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .big-img img{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="small-img">
+        <img src="../image/img01.jpg "alt="">
+        <div class="mosk"></div>
+    </div>
+    <div class="big-img">
+        <img  id="img" src="../image/img01.jpg" alt="">
+
+    </div>
+
+    <script>
+
+        var sBox = document.getElementsByClassName("small-img")[0];//拿到整个大的div
+        var mosk = sBox.getElementsByClassName("mosk")[0];
+        var bImg = document.getElementById('img');//拿到右侧放大的图片本身
+        sBox.onmousemove = function (event) {
+            var sTop = event.clientY - 100;
+            var sLeft = event.clientX - 100;
+            if (sTop < 0) {
+                sTop = 0;
+            }
+            if (sLeft < 0) {
+                sLeft = 0;
+            }
+            if (sTop > 200) {
+                sTop = 200;
+            }
+            if (sLeft > 200) {
+                sLeft = 200;
+            }
+
+            mosk.style.top = (sTop) + "px";
+            mosk.style.left = (sLeft) + "px";
+            bImg.style.top =  -2*sTop + "px";
+            bImg.style.left = -2*sLeft+ "px";
+
+        }
+
+
+    </script>
+</body>
+
+</html>

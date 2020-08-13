@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <div class="div2">世界</div>
+        <div class="div1">你好</div>
+
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+        var div1 = document.querySelector(".div1");
+// createElement() 方法
+    // 通过指定名称创建一个元素
+        var oH1 = document.createElement("h1");
+        oH1.innerText = "hello";
+        oH1.style.color = "red";
+        console.log(oH1);
+// appendChild() 方法
+    // 向节点添加最后一个子节点 或者 从一个元素向另一个元素中移动元素。
+        // oBox.appendChild(oH1);
+//insertBefore() 方法
+    // 在指定的已有子节点之前插入新的子节点 或者 插入/移动已有元素。
+        oBox.insertBefore(oH1, div1);
+
+
+    // oBox.innerHTML = oH1
+    // oBox.innerHTML = "<h1>hello world!</h1>";
+    </script>
+</body>
+
+</html>

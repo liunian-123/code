@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 30px;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 30px;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+
+    </div>
+
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        var oBox2 = document.getElementsByClassName("box2")[0];
+        var oBox3 = document.getElementsByClassName("box3")[0];
+        var timer;
+        var timer2;
+        var timer3;
+        oBox.onmouseover = function () {
+            clearInterval(timer)
+            var _width = 200;
+            var _this = this;
+            timer = setInterval(function () {
+                
+                if (_width < 600) {
+                    _width += 10
+                    _this.style.width = _width + "px";
+                } else {
+                    clearInterval(timer)
+                }
+            }, 16)
+        }
+
+        // style.width 只写（仅用它来设置宽度）
+        // offsetWidth 只读（获取元素宽度）
+        oBox.onmouseout = function () {
+            clearInterval(timer)
+            var _width2 = this.offsetWidth;
+            
+            var _this = this;  
+            timer = setInterval(function () {
+                if (_width2 > 200) {//不能与_width一样  所代表意义不同
+                    _width2 -= 10
+                    _this.style.width = _width2 + "px";
+                } else {
+                    clearInterval(timer)
+                }
+            }, 16)
+        }
+
+
+
+
+
+        oBox2.onmouseover = function () {
+            clearInterval(timer2)
+            var _wi = 200;
+            var _this = this;
+            timer2 = setInterval(function () {
+
+                if (_wi < 600) {
+                    _wi += 10
+                    _this.style.width = _wi + "px";
+                } else {
+                    clearInterval(timer2)
+                }
+            }, 16)
+        }
+
+        // style.width 只写（仅用它来设置宽度）
+        // offsetWidth 只读（获取元素宽度）
+        oBox2.onmouseout = function () {
+            clearInterval(timer2)
+            var _wi2 = this.offsetWidth;  
+            var _this = this;         
+            timer2 = setInterval(function () {
+
+                if (_wi2 > 200) {//不能与_width一样  所代表意义不同
+                    _wi2 -= 10
+                    _this.style.width = _wi2 + "px";
+                } else {
+                    clearInterval(timer2)
+                }
+            }, 16)
+        }
+
+
+
+
+
+        oBox3.onmouseover = function () {
+            clearInterval(timer3)
+            var _w = 200;
+           
+            var _this = this;
+            timer3 = setInterval(function () {
+
+                if (_w < 600) {
+                    _w += 10
+                    _this.style.width = _w + "px";
+                } else {
+                    clearInterval(timer3)
+                }
+            }, 16)
+        }
+
+        // style.width 只写（仅用它来设置宽度）
+        // offsetWidth 只读（获取元素宽度）
+        oBox3.onmouseout = function () {
+            clearInterval(timer3)
+            var _w2 = this.offsetWidth;
+          
+            var _this = this;
+            timer3 = setInterval(function () {
+
+                if (_w2 > 200) {//不能与_width一样  所代表意义不同
+                    _w2 -= 10
+                    _this.style.width = _w2 + "px";
+                } else {
+                    clearInterval(timer3)
+                }
+            }, 16)
+        }
+
+
+    </script>
+</body>
+
+</html>

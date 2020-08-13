@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <span>1</span>
+        <span>2</span>
+        <div id="div1">hello</div>
+    </div>
+    <script>
+        var oBox = document.querySelector("#box");
+        var oDiv = document.querySelector("#div1");
+//childNodes属性
+    // 返回节点的子节点集合，以 NodeList 对象。（NodeList 对象代表一个有顺序的节点列表。）
+    // 提示：您可以使用 length 属性来确定子节点的数量，然后您就能够遍历所有的子节点并提取您需要的信息。
+        console.log(oBox.childNodes);
+//children属性
+    // 返回元素的子元素的集合，是一个 HTMLCollection 对象。 （HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性。）
+        console.log(oBox.children);
+//children属性与childNodes 属性的差别：
+    // childNodes 属性返回所有的节点，包括文本节点、注释节点；
+    // children 属性只返回元素节点；
+
+
+//parentElement属性
+    // 返回指定元素的父元素。
+        console.log(oDiv.parentElement);
+//parentNode属性
+    // 以 Node 对象的形式返回指定节点的父节点。如果指定节点没有父节点，则返回 null。
+        console.log(oDiv.parentNode);
+
+
+
+    </script>
+</body>
+
+</html>

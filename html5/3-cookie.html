@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var timer = new Date();
+        // timer.setDate(timer.getDate()+1);
+        // document.cookie = "username=vip1;expires="+timer.toUTCString();
+        // document.cookie = "userage=19;expires="+timer.toUTCString();
+//split(";")   通过;分割字符串
+        //    var arr = document.cookie.split(";");
+// trim()       去除字符串的头尾空格:
+        //    console.log(arr[1].trim())
+
+
+        var timer = new Date();
+        timer.setDate(timer.getDate() + 1);
+        // 将文字转换成字符串toUTCString()
+        document.cookie = "userage=14;expires=" + timer.toUTCString();
+    </script>
+</body>
+
+</html>

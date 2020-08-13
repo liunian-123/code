@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big{
+            width: 800px;
+            height: 400px;
+            border: 3px solid black;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -400px;
+            margin-top: -300px;
+        }
+        .big .top{
+            height: 50px;
+            background-color: black;
+        }
+        .big .top .tap{
+            width: 70px;
+            background-color:black;
+            color: white;
+            height: 50px;
+            /* display: inline-block; */
+            float: left;
+           
+        }
+        .tap li{
+            color: white;
+            text-align: center;
+            list-style: none;
+            line-height: 50px;
+            /* padding-top: 15px; */
+        }
+        .tap .active{
+            background-color: #ddd ;
+            color: black;
+         
+        }
+        
+        
+        .bottom .text{
+            display: none;
+        } 
+        .bottom .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="top">
+            <div class="tap">
+                <li>第一节课</li>
+            </div>
+            <div class="tap">
+                <li>第二节课</li>
+            </div>
+            <div class="tap">
+                <li>第三节课</li>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="text">
+                <h1>第一节课内容</h1>
+            </div>
+            <div class="text">
+                <h1>第二节课内容</h1>
+            </div>
+            <div class="text">
+                <h1>第三节课内容</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var aText = document.getElementsByClassName("text");
+        for(var i = 0;i<aLi.length;i++)
+        {
+            aLi[i].index = i;
+            aLi[i].onmousemove = function(){
+                for( var j = 0; j<aLi.length ;j++){
+                    aLi[j].classList.remove("active");
+                    aText[j].classList.remove("active");
+                }
+            this.classList.add("active");
+            aText[this.index].classList.add("active");
+            }
+
+        }
+   
+    </script>
+
+</body>
+</html>

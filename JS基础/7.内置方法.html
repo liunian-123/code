@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+charAt()	    返回在指定位置的字符。
+indexOf()	    检索字符串。
+replace()	    替换与正则表达式匹配的子串。
+slice()	        提取字符串的片断，并在新的字符串中返回
+                被提取的部分。
+split()	        把字符串分割为字符串数组。
+substr()	    从起始索引号提取字符串中指定数目的字符。
+substring()	    提取字符串中两个指定的索引号之间的字符。
+
+
+
+concat()	    连接两个或更多的数组，并返回结果。
+join()	        把数组的所有元素放入一个字符串。
+                元素通过指定的分隔符进行分隔。
+pop()	        删除并返回数组的最后一个元素
+push()	        向数组的末尾添加一个或更多元素，
+                并返回 新的长度。
+reverse()	    颠倒数组中元素的顺序。
+slice()	        从某个已有的数组返回选定的元素
+splice()	    删除元素，并向数组添加新元素。
+
+
+parseFloat()	解析一个字符串并返回一个浮点数。
+parseInt()	    解析一个字符串并返回一个整数。
+
+ceil(x)	        对数进行上舍入。
+floor(x)	    对数进行下舍入。
+random()	    返回 0 ~ 1 之间的随机数。
+<body>
+  <script>
+    // var str = "hello";
+    // var str2 = "2020-07-29";
+    // console.log(str[1]);
+    // console.log(str.charAt(1))
+    // console.log(str.indexOf("s"));
+    // console.log(str.replace("ll","aa"));
+    // console.log(str.slice(1,3));
+    // console.log(str.slice(1));
+    // console.log(str2.split("-"));
+    // console.log(str.substr(1,2));
+    // console.log(str.substring(1));
+
+    // var arr = [1,2,3,4,5];
+    // var arr2 = [6,7,8,9];
+    // arr[5] = 6;
+    // arr.push("a")
+    // console.log(arr);
+    // arr.concat(arr2)
+    // console.log(arr,arr2)
+    // console.log(arr.join("-"));
+    // arr.pop()
+    // console.log(arr);
+
+    // console.log(arr.reverse());
+
+    // console.log(arr.slice(1,3))
+
+    // arr.splice(1,3,"a","b")
+    // console.log(arr);
+
+    // var str = "10"*1;
+    // var str = "10.1";
+    // // str = parseInt(str);
+    // str = parseFloat(str);
+    // var a = 1+str;
+    // console.log(a);
+
+    // var num = 10.3678;
+    // console.log(Math.ceil(num));
+    // console.log(Math.floor(num));
+    // console.log(Math.round(num));
+
+    console.log(Math.random());
+
+   
+    // // 生成1-10随机数字
+    // console.log(Math.ceil(Math.random()*10))
+    // console.log(Math.floor(Math.random()*10)+1)
+    // // 生成 0-5随机数字
+    // console.log(Math.floor( Math.random()*6))
+    // // 生成 5-10随机数字
+    // console.log(Math.floor( Math.random()*6)+5)
+
+    var timer = new Date();
+    let timerArr = [];
+    // timerArr.push(timer.getFullYear());
+    // timerArr.push(timer.getMonth()+1);
+    // timerArr.push(timer.getDate());
+    // console.log(timerArr.join("-"));
+    console.log(timer.getDay())
+    console.log(timer.getHours())
+    console.log(timer.getMinutes())
+
+    
+    
+    
+
+    
+  </script>
+</body>
+</html>

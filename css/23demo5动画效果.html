@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            /* 过度  属性  执行时间  运动  延迟时间*/
+            transition: width 1s ease;
+            /* 过度是两个点之间的动作  必须将两个点都写明白 */
+
+            /* all  监听所有要素 */
+            transition: all 1s ease;
+           
+        }
+        #div1:hover{
+            /* transition: width 1s ease; */
+            /* width:800px;
+            height: 700px; */
+            
+            /* 位移 */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+</body>
+</html>

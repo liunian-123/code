@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+  </div>
+  <script>
+    var div3 = document.querySelector(".div3");
+//previousSibling 属性与 previousElementSibling 属性的差别：
+     // previousElementSibling 属性只返回元素节点之前的兄弟元素节点（不包括文本节点、注释节点）；
+     // previousSibling 属性返回元素节点之前的兄弟节点（包括文本节点、注释节点）；
+    console.log(div3.previousElementSibling);
+    console.log(div3.previousSibling);
+//nextSibling 属性与 nextElementSibling 属性的差别：
+    // nextElementSibling 属性只返回元素节点之后的兄弟元素节点（不包括文本节点、注释节点）；
+    // nextSibling 属性返回元素节点之后的兄弟节点（包括文本节点、注释节点）；
+    console.log(div3.nextElementSibling);
+    console.log(div3.nextSibling);
+    
+    
+  </script>
+</body>
+</html>

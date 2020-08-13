@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box1{
+      height: 500px;
+      width: 500px;
+      background-color: blue;
+      position: relative;
+    }
+    .box2{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: absolute;
+      left: 50%;
+      margin-left:-100px;
+      top:50%;
+      margin-top:-100px;
+    }
+    .box2::after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 50px;
+      background-color: black;
+    }
+    .box2::before{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 50px;
+      background-color: purple;
+    }
+    img{
+      display: block;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <div class="box2">
+      <p>world</p>
+      <p>hello</p>
+    </div>
+  </div>
+  <img src="./image/img2.jpg" alt=""><img src="./image/img2.jpg" alt=""><img src="./image/img2.jpg" alt="">
+</body>
+</html>

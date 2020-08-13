@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图动态（老师）</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            margin: 0;
+            border: 0px;
+            padding: 0px;
+        }
+
+        .father {
+            width: 400px;
+            height: 200px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            border: 3px solid white;
+            text-align: center;
+            position: relative;
+            /* 后加 */
+            overflow: hidden;
+        }
+
+        /* 后加 */
+        .img-box ul {
+            width: 2400px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .img-box li {
+            list-style: none;
+            /* 后加 */
+            float: left;
+        }
+
+        .img-box li img {
+            width: 400px;
+            height: 200px;
+        }
+
+        .img-box .active {
+            display: block;
+        }
+
+
+
+        .btn {
+            height: 15px;
+        }
+
+        .btn .btn-right {
+            /* 相对于father */
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .btn .btn-left {
+            /* 相对于father */
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .btn li {
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: orange;
+            margin-right: 3px;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+
+        }
+
+        .btn .active {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="img-box">
+            <ul id="img-li">
+                <li class="img-list active"><img src="../image/07.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/img-shouji.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/07.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/img-shouji.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/img-shouji.jpg" alt=""></li>
+                <li class="img-list active six"><img src="../image/07.jpg" alt=""></li>
+            </ul>
+        </div>
+
+        <div class="btn">
+            <div class="btn-left">
+                <ul>
+                    <li class="arr-btn">&lt;</li>
+                    <li class="arr-btn">&gt;</li>
+                </ul>
+            </div>
+            <div class="btn-right">
+                <li class="num-btn">1</li>
+                <li class="num-btn">2</li>
+                <li class="num-btn">3</li>
+                <li class="num-btn">4</li>
+                <li class="num-btn">5</li>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numBtn = document.getElementsByClassName("num-btn");
+        var imgBtn = document.getElementsByClassName("img-list");
+        var arrBtn = document.getElementsByClassName("arr-btn");
+        var imgBox = document.getElementById("img-li");
+        var oBox = document.getElementsByClassName("father")[0]
+        var nowIndex = 0;//当前索引
+        var nextIndex = 0;//目标索引
+        var direction = 0;//方向
+        var timer;
+        var runTime;
+        var isRun = true;
+
+        //封装函数  index 为 nextIndex
+        function changeImg(index) {
+            if (!isRun) {//如果isRun 为 false 那么跳出函数
+                return false;//如果函数中遇到return 函数结束运行
+            }
+            isRun = false;
+            nextIndex = index;
+            //判断方向
+            //判断右边界
+           
+            //判断左边界
+            if (nowIndex == 0 && nextIndex == -1) {
+                direction = 10;
+                //左边界  将最后一张图片移动到前面
+                imgBox.style.left = "-2000px";
+            }
+            else if (nextIndex > nowIndex) {
+                direction = -10;
+            }
+            else if (nextIndex < nowIndex) {
+                direction = 10;
+            }
+            else {
+                direction = 0;
+            }
+            //控制数字按钮选中效果
+            for (var j = 0; j < numBtn.length; j++) {
+                numBtn[j].classList.remove("active");
+            }
+            //左边界
+            if (nextIndex == -1) {
+                numBtn[4].classList.add("active");
+                nextIndex = 4;
+            }
+            //右边界
+            else if (nextIndex == 5) {
+                numBtn[0].classList.add("active");
+            } else {
+                numBtn[nextIndex].classList.add("active")
+            }
+
+            //控制图片滚动的
+            timer = setInterval(function () {
+                if (imgBox.offsetLeft == -400 * nextIndex) {
+                    clearInterval(timer);
+                    isRun = true;
+                    console.log(imgBox.offsetLeft)
+                    //右边界
+                    if (nextIndex == 5) {
+                        //将第一张图片放到最后一张
+                        imgBox.style.left = 0;
+                        nowIndex = 0;
+                    }
+                    else {
+                        //当前索引等于目标索引
+                        nowIndex = nextIndex;
+                    }
+
+                } else {
+                    imgBox.style.left = imgBox.offsetLeft + direction + "px";
+                }
+            }, 16)
+        }
+
+        //数字按钮
+        for (var i = 0; i < numBtn.length; i++) {
+            numBtn[i].index = i;
+            numBtn[i].onclick = function () {
+                changeImg(this.index)
+            }
+        }
+        //向右
+        arrBtn[1].onclick = function () {
+            changeImg(nowIndex + 1)
+        }
+        //向左
+        arrBtn[0].onclick = function () {
+            changeImg(nowIndex - 1)
+        }
+
+        // 鼠标移入停止动画
+        oBox.onmouseover = function () {
+            clearInterval(runTimer);
+        }
+        // 鼠标移出继续
+        oBox.onmouseout = function () {
+            run();
+        }
+        // 定时滚动
+        function run() {
+            runTimer = setInterval(function () {
+                changeImg(nowIndex + 1);
+            }, 2000)
+        }
+        run()
+    </script>
+</body>
+
+</html>

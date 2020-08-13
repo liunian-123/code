@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            background-color: gray;
+            display: none;
+            position: fixed;
+            /* 生成绝对定位的元素 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        var rootEL = document.documentElement;
+
+        rootEL.oncontextmenu = function(event){
+            var x = event.clientX;
+            var y = event.clientY;
+            oBox.style.display = "block";
+            oBox.style.top = y + "px";
+            oBox.style.left = x + "px";  
+            console.log(x,y);
+            event.preventDefault();
+        
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            margin: 0;
+            border: 0px;
+            padding: 0px;
+        }
+
+        .father {
+            width: 500px;
+            height: 300px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            border: 3px solid white;
+            text-align: center;
+            position: relative;
+        }
+
+        .img-box li {
+            list-style: none;
+            display: none;
+        }
+
+        .img-box li img {
+            width: 500px;
+            height: 300px;
+        }
+
+        .img-box .active {
+            display: block;
+        }
+
+        .btn {
+            height: 15px;
+        }
+
+        .btn .btn-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+
+        }
+
+        .btn .btn-left {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        .btn li {
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: orange;
+            margin-right: 3px;
+            color: white;
+            float: left;
+
+        }
+
+        .btn .active {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="img-box">
+            <ul>
+                <li class="img-list active"><img src="../image/07.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/img-shouji.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/07.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/img-shouji.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/07.jpg" alt=""></li>
+            </ul>
+        </div>
+
+        <div class="btn">
+            <div class="btn-left">
+                <ul>
+                    <li class="arr-btn">&lt;</li>
+                    <li class="arr-btn">&gt;</li>
+                </ul>
+            </div>
+            <div class="btn-right">
+                <li class="num-btn">1</li>
+                <li class="num-btn">2</li>
+                <li class="num-btn">3</li>
+                <li class="num-btn">4</li>
+                <li class="num-btn">5</li>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numBtn = document.getElementsByClassName("num-btn");
+        var imgBtn = document.getElementsByClassName("img-list")
+        var arrBtn = document.getElementsByClassName("arr-btn")
+        var oBox = document.getElementsByClassName("father")[0]
+        var nowIndex = 0;
+        var timer;
+        // 优化代码
+        function changimg(index) {
+            for (var j = 0; j < numBtn.length; j++) {
+                numBtn[j].classList.remove("active");
+                imgBtn[j].classList.remove("active");
+            }
+            numBtn[index].classList.add("active")
+            imgBtn[index].classList.add("active")
+        }
+
+        //数字按钮
+        for (var i = 0; i < numBtn.length; i++) {
+            numBtn[i].index = i;
+            numBtn[i].onmousemove = function () {
+                changimg(this.index)
+                // 以下代码被优化
+                //     for( var j = 0; j<numBtn.length ;j++){
+                //         numBtn[j].classList.remove("active");
+                //         imgBtn[j].classList.remove("active");
+                //     }
+                //     nowIndex = this.index;
+                // this.classList.add("active");
+                // imgBtn[this.index].classList.add("active");
+            }
+
+        }
+
+
+
+        //箭头按钮  -向右
+        arrBtn[1].onclick = function () {
+            // var nextIndex = (++nowIndex) % 5;
+            var nextIndex = (++nowIndex)
+            if (nowIndex == 4) {
+                nowIndex = -1;
+            }
+            console.log(nowIndex)
+            changimg(nextIndex)
+            // for( var j = 0; j<numBtn.length ;j++){
+
+            //         numBtn[j].classList.remove("active");
+            //         imgBtn[j].classList.remove("active");
+            //     }
+            // numBtn[nextIndex ].classList.add("active")
+            // imgBtn[nextIndex ].classList.add("active")
+
+        }
+
+        //箭头按钮  -向左
+        arrBtn[0].onclick = function () {
+            var nextIndex = --nowIndex;
+
+            console.log(nowIndex)
+            changimg(nextIndex);
+            // for( var j = 0; j<numBtn.length ;j++){
+
+            //         numBtn[j].classList.remove("active");
+            //         imgBtn[j].classList.remove("active");
+            //     }
+            // numBtn[nextIndex ].classList.add("active")
+            // imgBtn[nextIndex ].classList.add("active")
+            if (nowIndex == 0) {
+                nowIndex = 5;
+            }
+        }
+        oBox.onmousemove = function () {
+            clearInterval(timer);
+        }
+        oBox.onmouseout = function () {
+            run();
+        }
+        //定时播放
+        function run() {
+             timer = setInterval(function () {
+                arrBtn[1].onclick();
+                // var nextIndex = (++nowIndex) % 5;
+                // changimg(nextIndex)
+
+            }, 1000)
+        }
+        run()
+    </script>
+</body>
+
+</html>

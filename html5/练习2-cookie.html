@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+//创建cookie 
+     function setCookie(cname, cvalue,exdays) {
+            var timer = new Date();
+            timer.setDate(timer.getDate()+(exdays*24*60*60*1000));
+            var expires = "expires=" +timer.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+// 更改cookie
+        function changeCookie(cname, cvalue,exdays) {
+            var timer = new Date();
+            timer.setDate(timer.getDate()+(exdays*24*60*60*1000));
+            var expires = "expires=" +timer.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+// 删除cookie
+        function clearCookie(name){
+            setCookie(name,"",-1);
+        }
+// 
+        function getCookie(cname) {
+            var name = cname+"=";
+            var arr = document.cookie.split(";");
+            for(var i=0;i<arr.length;i++){
+                var c = arr[i].tirm();
+// int indexOf(String str): 返回指定字符在字符串中第一次出现处的索引，
+// 如果此字符串中没有这样的字符，则返回 -1。  
+                if(c.indexOf(name)!=-1){
+// substring() 方法用于提取字符串中介于两个指定下标之间的字符。
+                    return c.substring(name.length,c.length)
+                }
+            }
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+    </script>
+</body>
+
+</html>

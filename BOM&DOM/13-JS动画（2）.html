@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #father {
+            width: 600px;
+            height: 100px;
+            border:1px solid black;
+        }
+        #box {
+            width: 0px;
+            height: 100px;
+            background-color: red;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father"> 
+        <div id="box"><span class="clock">0</span>%</div>
+    </div>
+
+    <button class="btn">开始</button>
+    <script>
+        var i = 0;
+        var oBox = document.getElementById("box");
+        var oBtn = document.getElementsByClassName("btn")[0];
+        var clock = document.getElementsByClassName("clock")[0];
+        oBtn.onclick = function run() {
+            if (oBox.offsetWidth < 600) {
+                window.requestAnimationFrame(run);
+                oBox.style.width = (oBox.offsetWidth + 1) + "px";
+                i = parseInt((oBox.offsetWidth / 6));
+                clock .innerHTML = i;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

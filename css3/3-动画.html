@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+/* 变成圆 */
+      border-radius: 50%;
+      background-color: red;
+      /* animation: foo 1s ease; */
+      position: fixed;
+      top:0;
+      left: 0;
+      animation-name: foo;
+      animation-duration: 3s;
+      animation-timing-function: ease;
+      animation-delay: 1s;
+/* 定义动画应该播放多少次。 infinite 指定动画应该播放无限次（永远） */
+      animation-iteration-count: infinite;
+/* 规定当动画不播放时（当动画完成时，
+或当动画有一个延迟未开始播放时），要应用到元素的样式。
+forwards	
+        在动画结束后（由 animation-iteration-count 决定），动画将应用该属性值。
+ */
+      animation-fill-mode: forwards;
+    }
+    .box:hover{
+/* 指定动画是否正在运行或已暂停。
+paused	指定暂停动画 */
+      animation-play-state: paused;
+    }
+    @keyframes foo{
+      0%{
+        top:0;
+        left: 0;
+      }
+      /* 50%{
+        top:0;
+        left: 200px;
+      } */
+      100%{
+        top:0;
+        left: 700px;
+      }
+      /* 0%{
+        top:0;
+        left: 0;
+      }
+      10%{
+        top: 100px;
+        left: 200px;
+      }
+      30%{
+        top: 50px;
+        left: 300px;
+      }
+      50%{
+        top:200px;
+        left: 400px;
+      }
+      100%{
+        top:100px;
+        left: 500px;
+      } */
+      /* from{
+        top:0;
+        left: 0;
+      }
+      to{
+        top:200px;
+        left: 500px;
+      } */
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
