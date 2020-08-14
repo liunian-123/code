@@ -1,6 +1,3 @@
-<!-- 面试重点 -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +11,21 @@
   <script>
     var oBtn = document.getElementById("btn");
     var obj = {};
-    //     var obj = {
-              // "0.123456" :[1,2,3,4,6],
-              // "0.123456" :[1,2,3,4,6]
-    // };
+
     oBtn.onclick = function(){
       var _random = Math.random()
-      // 地址 = 随机数
-      location.hash = _random;
+      history.pushState(_random,"");
       var arr = [];
       for(var i=0;i<5;i++){
         arr.push(Math.floor(Math.random()*10))
       }
-      obj[_random] = arr//通过obj[_random]调用随机数所标志的页面
+      obj[_random] = arr
+      console.log(arr,obj);
     }
-    // 当页面hash值发生变化就会触发
-    window.onhashchange = function(){
-      // console.log(location.hash)
-      var _hash = location.hash.slice(1);//除去前面的#
-      console.log(obj[_hash]);
+    window.onpopstate = function(e){
+      console.log(e.state)
+      console.log(obj[e.state]);
+      
     }
   </script>
 </body>
