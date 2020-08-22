@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <div id="div1">11</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        $('button').on('click',function(){
+// 将参数内容插入到每个匹配元素的前面（元素内部）。
+            // $('#div1').prepend('<span>哈哈哈</span>');
+// 在匹配元素集合中的每个元素后面插入参数所指定的内容，作为其兄弟节点。
+            // $('#div1').after('<span>哈哈哈</span>');
+            // $('#div1').before('<span>哈哈哈</span>');
+            // $('#div1').remove();
+// 替换replaceAll
+            $('<h2>2dfgh</h2>').replaceAll("#div1")
+
+            // console.log($('#div1').text())
+        })
+    </script>
+    
+</body>
+</html>
