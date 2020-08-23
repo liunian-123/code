@@ -32,15 +32,22 @@
         // console.log(x,y,z);
 
        let a = 5;
-       let b = 6
+       let b = 6;
        // a = 6  b = 5;
-        let c =0;
-        console.log(a,b,c) 
-        c=a;
-        a=b
-        b=c
-        console.log(a,b) 
-
+    //   方法1
+        // let c =0;
+        // console.log(a,b,c) 
+        // c=a;
+        // a=b
+        // b=c
+        // console.log(a,b) 
+// 方法2
+        // a = a+b;//11
+        // b = a-b;//5
+        // a = a-b;//6
+// 方法3  解构赋值
+        [b,a] = [a,b];
+        console.log(a,b)
 
 
 
