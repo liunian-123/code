@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+/*
+document.documentElement.clientWidth
+获取浏览器窗口文档显示区域的宽度，不包括滚动条。
+
+document.documentElement.clientHeight
+获取浏览器窗口文档显示区域的高度，不包括滚动条。
+document.body.clientWidth
+网页可见区域宽
+
+document.body.clientHeight
+网页可见区域高
+*/ 
+        var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        function Leaf() {
+            this.width = Math.random() * 50 + 100;  //宽度100px到150px之间
+            this.top = 0
+            this.left = Math.random() * (clientWidth - this.width)
+            this.speed = 3;
+            var oImg = new Image();
+            oImg.src = "img/" + (Math.floor(Math.random() * 4 + 1)) + ".png"
+            oImg.style.width = this.width + "px";
+            oImg.style.left = this.left + "px";
+            oImg.style.top = this.top
+            this.img = oImg
+        }
+        Leaf.prototype.init = function () {
+            document.body.appendChild(this.img);
+        }
+        Leaf.prototype.fall = function () {
+            setTimeout( () => {//起跑时间
+                this.timer = setInterval( () => {
+                    if (this.img.offsetTop >= clientHeight - this.img.offsetHeight) {
+                        clearInterval(this.timer);
+                    } else {
+                        this.img.style.top = this.img.offsetTop + this.speed+ "px";
+                    }
+                }, 10);
+            }, Math.random() * 500)
+        }
+        var leafs = []
+        for (var i = 0; i < 10; i++) {
+            var leaf = new Leaf();
+            leafs.push(leaf);
+            leaf.init();
+        }
+        document.onclick = function () {
+            for (var j = 0; j < leafs.length; j++) {
+                leafs[j].fall();
+            }
+        }
+    </script>
+</body>
+
+</html>
