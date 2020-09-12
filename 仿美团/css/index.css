@@ -49,21 +49,46 @@
     height: 44px;
     margin-top: 14px;
 }
+/* 商家 */
 .store-title{
     text-align: center;
-    height: 0.46rem;
-    line-height: 0.46rem;
-    margin: 0.3rem 0 0 0.1rem;
+    height: 1.84rem;
+    line-height: 1.84rem;
+    margin: 1.2rem 0 0 0.4rem;
     font-size: 17px;
 }
 .store-title::before,.store-title::after{
     content :"";
     display: inline-block;
-    width: 20px;
+    width: 33px;
     height: 1px;
     vertical-align: middle;
     background: black;
     
+}
+.store-list-box{
+    padding: 0 0.8rem;
+}
+.store-list{
+    display: flex; 
+}
+.img-box{
+    width: 4.56rem;
+    margin-right:0.8rem;
+}
+.store-list img{
+    display: block;
+    width: 4.56rem;
+    height: 3.68rem;
+}
+.info-box{
+    margin-top: 0.5rem;
+    flex: 1;
+}
+.info-box .title{
+   
+    font-size: 16px;
+    color: #333;
 }
 
 
