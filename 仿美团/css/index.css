@@ -32,3 +32,38 @@
     margin-top: -39px;
     margin-left: 25px;
 }
+.cate-box{
+    display: flex;
+    flex-wrap:wrap;
+    
+    justify-content:center;
+}
+.cate-list {
+    width: 20%;
+    text-align: center;
+    color: #333;
+    font-size: 11px;
+}
+.cate-list img{
+    width:44px;
+    height: 44px;
+    margin-top: 14px;
+}
+.store-title{
+    text-align: center;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    margin: 0.3rem 0 0 0.1rem;
+    font-size: 17px;
+}
+.store-title::before,.store-title::after{
+    content :"";
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    vertical-align: middle;
+    background: black;
+    
+}
+
+
