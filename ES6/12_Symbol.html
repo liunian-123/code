@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+         数据类型
+         基本 
+                string  number boolean null undefined Symbol(ES6新增)
+         引用
+                Array Object
+     -->
+
+     <script>
+         let s1 = Symbol();/*独一无二的值*/
+         let obj = {
+            name:'zs'
+         }
+         obj[Symbol()] = 'xx';
+         console.log(obj);
+
+         for(let key in obj){
+             console.log(obj[key])
+         }
+     </script>
+</body>
+</html>
