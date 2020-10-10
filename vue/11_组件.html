@@ -18,7 +18,7 @@
         // 全局组件
         Vue.component('my-component',{
             template:'<h2 @click="change()">love coding  {{msg}}</h2>',
-            // data函数 
+            // 组件中 data是函数    new Vue 中data是一个对象 
             data(){
                 return {
                     msg:0
