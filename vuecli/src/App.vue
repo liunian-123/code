@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-     <router-link to="/4">/</router-link>
+     <router-link to="/4">/4</router-link>
      |
     <router-link to="/home">首页</router-link>
     |
-    <!-- query传参 -->
-    <!-- <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link> -->
-    <!-- params传参 -->
-    <router-link :to="{name:'test',params:{id:22,name:'zs'}}">测试</router-link>
+    <!-- query传参   path  id name-->
+    <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link>
+    <!-- params传参  name  id name  刷新后消失 -->
+    <!-- <router-link :to="{name:'test',params:{id:22,name:'zs'}}">测试</router-link> -->
     <!-- 路由路径传参 -->
     |
     <router-link to="/test3/3">测试3</router-link>
-
+      <router-link to="/test5">测试5</router-link>
     <router-view></router-view>
 
   </div>
@@ -47,4 +47,7 @@ export default {
     }
   }
 }
+
+
+
 </style>
