@@ -1,21 +1,28 @@
 <template>
   <div id="app">
+     <router-link to="/4">/</router-link>
+     |
     <router-link to="/home">首页</router-link>
-    <router-link to="/test">测试</router-link>
+    |
+    <!-- query传参 -->
+    <!-- <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link> -->
+    <!-- params传参 -->
+    <router-link :to="{name:'test',params:{id:22,name:'zs'}}">测试</router-link>
+    <!-- 路由路径传参 -->
+    |
+    <router-link to="/test3/3">测试3</router-link>
+
     <router-view></router-view>
-    哈哈
-    <h2>dfghjk ggl; hehe</h2>
-    <test></test>
+
   </div>
 </template>
 <script>
 // 1 引入组件 import  2 components声明 3使用
-import Test from "./views/Test";
+// import Test from "./views/Test";
 export default {
-//2 components声明 3使用
-  components: {
-    Test
-  }
+  // components: {
+  //   Test
+  // }
 };
 </script>
 
