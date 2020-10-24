@@ -33,13 +33,13 @@ const routes = [
   },
   {
     path:'/test5',
-    name:'test5',
-    component:Test5
-  },
-  {
+    component:Test5,
+    alias:'/aa'
+  },{
     path:'/:id',
-    redirect:'/test3/:id'
-  }
+    redirect:'/test3/:id',
+  },
+  
   
 ]
 

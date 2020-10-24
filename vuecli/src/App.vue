@@ -1,18 +1,25 @@
 <template>
   <div id="app">
-     <router-link to="/4">/4</router-link>
+     <router-link to="/4">/</router-link>
      |
     <router-link to="/home">首页</router-link>
     |
-    <!-- query传参   path  id name-->
-    <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link>
-    <!-- params传参  name  id name  刷新后消失 -->
-    <!-- <router-link :to="{name:'test',params:{id:22,name:'zs'}}">测试</router-link> -->
+    <!-- query传参 -->
+    <!-- <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link> -->
+    <!-- params传参 -->
+    <router-link :to="{name:'test',params:{id:22}}">测试</router-link>
     <!-- 路由路径传参 -->
     |
     <router-link to="/test3/3">测试3</router-link>
-      <router-link to="/test5">测试5</router-link>
-    <router-view></router-view>
+    |
+    <router-link to="/aa">测试5</router-link>
+    <button @click="go()">click</button>
+     <button @click="goTest()">test params传参</button>
+     <button @click="goBack()">&lt;</button>
+     <button @click="$router.go(-1)">&lt;</button>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
 
   </div>
 </template>
@@ -22,7 +29,22 @@
 export default {
   // components: {
   //   Test
-  // }
+  // },
+  methods:{
+    go(){
+      // 跳转到首页$router
+      this.$router.push('/home');
+      this.$router.push('/test3/6')
+    },
+    goTest(){
+        // 跳转到test页 ->params传参 (name)
+        this.$router.push({name:'test',params:{id:1024}})
+
+    },
+    goBack(){
+      this.$router.go(-1);
+    }
+  }
 };
 </script>
 
@@ -47,7 +69,22 @@ export default {
     }
   }
 }
-
-
-
+.fade-enter{
+  opacity: 0;
+}
+.fade-enter-active{
+  transition: opacity 2s ease ;
+}
+.fade-enter-to{
+  opacity: 1;
+}
+.fade-leave{
+  transform: translateX(0);
+}
+.fade-leave-active{
+  transition: transform 2s ease;
+}
+.fade-leave-to{
+  transform: translateX(100%);
+}
 </style>
