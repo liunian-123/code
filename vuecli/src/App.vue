@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <router-link to="/home">首页</router-link>
+    <router-link to="/test">测试</router-link>
+    <router-view></router-view>
     哈哈
     <h2>dfghjk ggl; hehe</h2>
     <test></test>
