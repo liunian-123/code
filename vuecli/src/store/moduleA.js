@@ -24,5 +24,5 @@ const user = {
     actions: {
     }
 }
-
+//ES6中的语法  将user暴露出来 只有暴露出来就才能在其他文件中通过 import xx from xx引用
 export default user;

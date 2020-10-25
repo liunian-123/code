@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
+    //模块A和B
     a: moduleA,
     b: moduleB
   }
