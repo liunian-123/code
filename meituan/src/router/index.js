@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '@/views/home/index'
-import Dindex from '@/views/detail/index'
+import detail from '@/views/detail/index'
 
 Vue.use(VueRouter)
 
@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path:'/detail',
-    component:Dindex
+    component:Detail
   }
 ]
 
