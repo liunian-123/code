@@ -1,21 +1,32 @@
 <template>
     <div>
-        我是首页
+        <!-- Head组价 -->
         <Head></Head>
-        <Gategory></Gategory>
+
+        <!-- Categroy组件 -->
+        <Category></Category>
+
+        <!-- List组件 -->
         <List></List>
+<!-- 首页 -->
     </div>
 </template>
 
 <script>
-import Head from "./Head"
-import Gategory from "./Category"
-import List from "./List"
+/*  
+    1import引入
+    2components声明
+    3template中使用
+*/
+    import Head from './Head'
+    import Category from './Category'
+    import List from './List'
     export default {
-        component:{
-            
+        components:{
+            Head,
+            Category,
+            List
         }
-        
     }
 </script>
 

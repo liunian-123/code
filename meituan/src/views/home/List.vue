@@ -1,6 +1,6 @@
 <template>
     <div>
-        我是首页的分类
+商家列表
     </div>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>
