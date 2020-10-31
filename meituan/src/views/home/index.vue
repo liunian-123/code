@@ -14,6 +14,7 @@
 
 <script>
 /*  
+嵌入子组件的过程：
     1import引入
     2components声明
     3template中使用
