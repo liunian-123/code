@@ -6,7 +6,7 @@
     |
     <!-- query传参 -->
     <!-- <router-link :to="{path:'/test',query:{id:11,name:'zs'}}">测试</router-link> -->
-    <!-- params传参 -->
+    <!-- params传参  一刷新就消失了 -->
     <router-link :to="{name:'test',params:{id:22}}">测试</router-link>
     <!-- 路由路径传参 -->
     |
