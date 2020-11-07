@@ -38,7 +38,7 @@ export default {
   //父组件到子组件传值使用props
   props: {
       num: {
-         type: Number,
+        //  type: Number,
          default: 5
           }
   }

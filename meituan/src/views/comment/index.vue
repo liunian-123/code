@@ -2,7 +2,7 @@
   <div>
     <!-- header -->
     <comment-header :list="list"></comment-header>
-    <comment-list :list="list"></comment-list>
+    <comment-list :list="list" @updata="fn"></comment-list>
   </div>
 </template>
 
@@ -23,14 +23,22 @@ export default {
     CommentList,
   },
   created() {
-    axios
-      .get(
-        ` http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=1`
-      )
-      .then((res) => {
-        console.log(res.data.data);
-        this.list = res.data.data;
-      });
+   this.getData(1)
+  },
+  methods: {
+    getData(typeId) {
+      axios
+        .get(
+          ` http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=${typeId}`
+        )
+        .then((res) => {
+          console.log(res.data.data);
+          this.list = res.data.data;
+        });
+    },
+    fn(id){
+        this.getData(id)
+    }
   },
 };
 </script>
