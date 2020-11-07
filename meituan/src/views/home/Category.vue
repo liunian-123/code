@@ -24,7 +24,7 @@
             axios.get('http://admin.gxxmglzx.com/tender/test/get_type')
             .then((res)=>{ //成功
                 // axios返回的数据 res.data
-                console.log(res.data)
+                // console.log(res.data)
                 // res.data：
                 // data: (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, __ob__: Observer]
                 // errcode: 200
