@@ -23,6 +23,8 @@ export default {
     CommentList,
   },
   created() {
+    // 请求评论也数据
+    // id商家id  type评论类型 1（全部）
    this.getData(1)
   },
   methods: {
