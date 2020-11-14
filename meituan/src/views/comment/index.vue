@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <!-- header -->
-    <comment-header :list="list"></comment-header>
-    <comment-list :list="list" @updata="fn"></comment-list>
+  <div class="comment-wrapper">
+    <div>
+      <!-- header -->
+      <comment-header :list="list"></comment-header>
+      <!-- list -->
+      <comment-list :list="list" @updata="fn"></comment-list>
+    </div>
   </div>
 </template>
 
@@ -10,7 +13,7 @@
 import axios from "axios";
 import CommentList from "./CommentList";
 import CommentHeader from "./CommentHeader";
-
+import BetterScroll from "better-scroll";
 export default {
   data() {
     return {
@@ -25,7 +28,7 @@ export default {
   created() {
     // 请求评论也数据
     // id商家id  type评论类型 1（全部）
-   this.getData(1)
+    this.getData(1);
   },
   methods: {
     getData(typeId) {
@@ -36,14 +39,23 @@ export default {
         .then((res) => {
           console.log(res.data.data);
           this.list = res.data.data;
+          this.$nextTick(()=>{
+             new BetterScroll(".comment-wrapper", {
+            click: true,
+            bounce: false,
+          });
+          })
         });
     },
-    fn(id){
-        this.getData(id)
-    }
+    fn(id) {
+      this.getData(id);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.comment-wrapper{
+height: calc(100vh -44px);
+}
 </style>
