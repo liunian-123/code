@@ -4,7 +4,7 @@
       <!-- header -->
       <comment-header :list="list"></comment-header>
       <!-- list -->
-      <comment-list :list="list" @updata="fn"></comment-list>
+      <comment-list :list="list" @xx="fn"></comment-list>
     </div>
   </div>
 </template>
@@ -18,12 +18,12 @@ export default {
   data() {
     return {
       id: this.$route.query.id,
-      list: [],
+      list: {}
     };
   },
   components: {
     CommentHeader,
-    CommentList,
+    CommentList
   },
   created() {
     // 请求评论也数据
@@ -31,31 +31,33 @@ export default {
     this.getData(1);
   },
   methods: {
+    fn(id) {
+      //   修改type = id
+      this.getData(id);
+    },
     getData(typeId) {
       axios
         .get(
-          ` http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=${typeId}`
+          `http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=${typeId}`
         )
-        .then((res) => {
+        .then(res => {
           console.log(res.data.data);
           this.list = res.data.data;
           this.$nextTick(()=>{
-             new BetterScroll(".comment-wrapper", {
-            click: true,
-            bounce: false,
-          });
+            new BetterScroll(".comment-wrapper",{
+              bounce:false,
+              click:true
+            })
           })
+          // this.score.delivery =
         });
-    },
-    fn(id) {
-      this.getData(id);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .comment-wrapper{
-height: calc(100vh -44px);
+height: calc(100vh - 44px);
 }
 </style>
