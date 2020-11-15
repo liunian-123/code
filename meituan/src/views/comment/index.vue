@@ -58,6 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .comment-wrapper{
+  // calc中 - 左右两边必须有空格
 height: calc(100vh - 44px);
 }
 </style>
