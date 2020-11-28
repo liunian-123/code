@@ -29,6 +29,7 @@
                 // data: (10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, __ob__: Observer]
                 // errcode: 200
                 // errmsg: "成功"
+                console.log(res);
                 let result = res.data;
                 if(result.errcode == 200){
                     this.cateList = result.data;
