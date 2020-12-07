@@ -19,13 +19,12 @@
 
         console.log(obj.constructor == Object);
         console.log(arr.constructor == Array);
-
+// 基本数据类型
         var a = 10;
         var b = a;
         a = 20;
         console.log(a,b);//20 10
-
-
+// 引用数据类型
         var arr = [1,2,3];
         var arr2 = arr;
         arr[1] = 5;
@@ -47,6 +46,7 @@
             return result;
         }
         var obj4 =  cloneArray(obj3);
+        obj4.name = 'zss';
         obj4.father.name = 'zxx';
         console.log(obj3,obj4);
 

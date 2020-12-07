@@ -11,7 +11,6 @@
             this.name = name;
             this.age = age;
         }
-
         Person.prototype.eat = function(){
             console.log('吃')
         }
@@ -21,14 +20,10 @@
         }
         // 子类的原型对象 = new 父类的实例化对象继承方法
         Coder.prototype = new Person();
-        Coder.prototype.constructor = Coder;
-        
+        Coder.prototype.constructor = Coder;//coder的构造函数需要指回去
         var c1 = new Coder('小牛',18);
         console.log(c1)
         c1.eat()
-
-
-
     </script>
     
 </body>
