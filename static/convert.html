@@ -33,160 +33,72 @@
         var data = {
             //原价 
 
-            "bg": {
-                "width": 1242,
-                "height": 2209,
-                "imgUrl": "https://static001.geekbang.org/resource/image/55/ba/555c92035085ce6660ae8e53a89a55ba.png"
-            },
-            "els":[
-                {
-                    "type":"text",
-                    "fontSize":126,
-                    "fontColor":713529,
-                    "x":60,
-                    "y":1843,
-                    "fontWeight":300,
-                    "lineHeight":126,
-                    "width":800,
-                    "text":"￥"
-                },
-                {
-                    "type":"text",
-                    "fontSize":126,
-                    "fontColor":713529,
-                    "x":167,
-                    "y":1843,
-                    "fontWeight":300,
-                    "lineHeight":126,
-                    "width":800,
-                    "text":"68"
-                },
-                {
-                    "type":"text",
-                    "fontSize":54,
-                    "fontColor":713529,
-                    "x":325,
-                    "y":1899,
-                    "fontWeight":300,
-                    "lineHeight":54,
-                    "width":800,
-                    "text":"/"
-                },
-                {
-                    "type":"text",
-                    "fontSize":68,
-                    "fontColor":713529,
-                    "x":363,
-                    "y":1891,
-                    "fontWeight":300,
-                    "lineHeight":68,
-                    "width":800,
-                    "text":"14"
-                },
-                {
-                    "type":"text",
-                    "fontSize":57,
-                    "fontColor":713529,
-                    "x":443,
-                    "y":1898,
-                    "fontWeight":300,
-                    "lineHeight":57,
-                    "width":800,
-                    "text":"期"
-                },
-            {
-                    "type":"text",
-                    "background":574166,
-                    "paddingtop":17,
-                    "paddingleft":30,
-                    "radius":10,
-                    "fontSize":51,
-                    "fontColor":'d4ceda',
-                    "x":88,
-                    "y":2033,
-                    "fontWeight":300,
-                    "lineHeight":51,
-                    "width":500,
-                    "text":"新人专享，仅需￥19.9"
-                }
-            ]
-            //优惠
-
             // "bg": {
             //     "width": 1242,
             //     "height": 2209,
-            //     "imgUrl": "https://static001.geekbang.org/resource/image/c7/74/c79b5094131fd4a4478bed3a673ccd74.png"
+            //     //带有价格的背景
+            //     // "imgUrl": "https://static001.geekbang.org/resource/image/55/ba/555c92035085ce6660ae8e53a89a55ba.png"
+            //     //不带价格的背景
+            //     "imgUrl":"https://static001.geekbang.org/resource/image/15/d8/1520a1011156226f7173492f98dbe5d8.png"
             // },
-            // "els": [
+            // "els":[
             //     {
-            //         "type": "text",
-            //         "fontSize": 61,
-            //         "fontColor": 713529,
-            //         "x": 89,
-            //         "y": 1836,
-            //         "fontWeight": 300,
-            //         "lineHeight": 61,
-            //         "width": 800,
-            //         "text": "原价"
-            //     },
-            //     {
-            //         "type": "text",
-            //         "fontSize": 61,
-            //         "fontColor": 713529,
-            //         "x": 201,
-            //         "y": 1836,
-            //         "fontWeight": 300,
-            //         "lineHeight": 61,
-            //         "width": 800,
-            //         "text": "￥"
-            //     }, {
-            //         "type": "text",
-            //         "fontSize": 61,
-            //         "fontColor": 713529,
-            //         "x": 252,
-            //         "y": 1836,
-            //         "fontWeight": 300,
-            //         "lineHeight": 61,
-            //         "width": 800,
-            //         "text": "68"
-            //     },
-            //     {
-            //         "type": "text",
-            //         "isLengthVar": true,
-            //         "fontSize": 85,
-            //         "fontColor": 713529,
-            //         "x": 83,
-            //         "y": 1918,
-            //         "fontWeight": 300,
-            //         "lineHeight": 85,
-            //         // "width": 100,
-            //         "text": "早鸟优惠"
-            //     },
-            //     {
-            //         "type": "text",
-            //         "fontSize": 112,
-            //         "fontColor": 'e9531e',
-            //         "x": 407,
-            //         "y": 1904,
-            //         "fontWeight": 300,
-            //         "lineHeight": 112,
-            //         "width": 800,
-            //         "text": "￥"
-            //     },
-            //     {
-            //         "type": "text",
-            //         "fontSize": 110,
-            //         "fontColor": 'e9531e',
-            //         "x": 492,
-            //         "y": 1904,
-            //         "fontWeight": 300,
-            //         "lineHeight": 110,
-            //         "width": 800,
-            //         "text": "55"
+            //         "type":"text",
+            //         "fontSize":126,
+            //         "fontColor":713529,
+            //         "x":60,
+            //         "y":1843,
+            //         "fontWeight":300,
+            //         "lineHeight":126,
+            //         "width":800,
+            //         "text":"￥"
             //     },
             //     {
             //         "type":"text",
-            //         "background":'574166',
+            //         "fontSize":126,
+            //         "fontColor":713529,
+            //         "x":167,
+            //         "y":1843,
+            //         "fontWeight":300,
+            //         "lineHeight":126,
+            //         "width":800,
+            //         "text":"68"
+            //     },
+            //     {
+            //         "type":"text",
+            //         "fontSize":54,
+            //         "fontColor":713529,
+            //         "x":325,
+            //         "y":1899,
+            //         "fontWeight":300,
+            //         "lineHeight":54,
+            //         "text":"/"
+            //     },
+            //     {
+            //         "type":"text",
+            //         "isLength": true,
+            //         "fontSize":68,
+            //         "fontColor":713529,
+            //         "x":363,
+            //         "y":1891,
+            //         "fontWeight":300,
+            //         "lineHeight":68,
+            //         "text":"141"
+            //     },
+            //     {
+            //         "type":"text",
+            //         "fontSize":57,
+            //         "fontColor":713529,    
+            //         "x":443,
+            //         "y":1898,
+            //         "fontWeight":300,
+            //         "lineHeight":57,
+            //         "width":800,
+            //         "text":"期"
+            //     },
+            // {
+            //         "type":"text",
+            //         "background":574166,
             //         "paddingtop":17,
             //         "paddingleft":30,
             //         "radius":10,
@@ -200,6 +112,100 @@
             //         "text":"新人专享，仅需￥19.9"
             //     }
             // ]
+            
+            // 优惠
+
+            "bg": {
+                "width": 1242,
+                "height": 2209,
+                //带有价格的背景
+                // "imgUrl": "https://static001.geekbang.org/resource/image/c7/74/c79b5094131fd4a4478bed3a673ccd74.png"
+                //不带价格的背景
+                "imgUrl":"https://static001.geekbang.org/resource/image/15/d8/1520a1011156226f7173492f98dbe5d8.png"
+
+            },
+            "els": [
+                {
+                    "type": "text",
+                    "fontSize": 61,
+                    "fontColor": 713529,
+                    "x": 89,
+                    "y": 1836,
+                    "fontWeight": 300,
+                    "lineHeight": 61,
+                    "width": 800,
+                    "text": "原价"
+                },
+                {
+                    "type": "text",
+                    "fontSize": 61,
+                    "fontColor": 713529,
+                    "x": 201,
+                    "y": 1836,
+                    "fontWeight": 300,
+                    "lineHeight": 61,
+                    "width": 800,
+                    "text": "￥"
+                }, {
+                    "type": "text",
+                    "fontSize": 61,
+                    "fontColor": 713529,
+                    "x": 252,
+                    "y": 1836,
+                    "fontWeight": 300,
+                    "lineHeight": 61,
+                    "width": 800,
+                    "text": "68"
+                },
+                {
+                    "type": "text",
+                    "isLengthVar": true,
+                    "fontSize": 85,
+                    "fontColor": 713529,
+                    "x": 83,
+                    "y": 1918,
+                    "fontWeight": 300,
+                    "lineHeight": 85,
+                    "text": "早鸟优"
+                },
+                {
+                    "type": "text",
+                    "fontSize": 112,
+                    "fontColor": 'e9531e',
+                    "x": 407,
+                    "y": 1904,
+                    "fontWeight": 300,
+                    "lineHeight": 112,
+                    "width": 800,
+                    "text": "￥"
+                },
+                {
+                    "type": "text",
+                    "fontSize": 110,
+                    "fontColor": 'e9531e',
+                    "x": 492,
+                    "y": 1904,
+                    "fontWeight": 300,
+                    "lineHeight": 110,
+                    "width": 800,
+                    "text": "55"
+                },
+                {
+                    "type":"text",
+                    "background":'574166',
+                    "paddingtop":17,
+                    "paddingleft":30,
+                    "radius":10,
+                    "fontSize":51,
+                    "fontColor":'d4ceda',
+                    "x":88,
+                    "y":2033,
+                    "fontWeight":300,
+                    "lineHeight":51,
+                    "width":500,
+                    "text":"新人专享，仅需￥19.9"
+                }
+            ]
         }
     </script>
     <title>极客时间</title>
@@ -343,25 +349,42 @@
             methods: {
                 getVarDom () {
                     const varDom = document.querySelector('.is-width-var')
+                    if(!varDom) return
                     let domWidth = varDom.clientWidth
                     let domLeft = varDom.offsetLeft
-                    var nextDom = varDom.parentNode.nextSibling.childNodes[0]
-                    // console.log(nextDom, domLeft+domWidth)
-                    nextDom.style.left = `${domLeft + domWidth - 16}px`
-                    var nexttwoDom = varDom.parentNode.nextSibling.nextSibling.childNodes[0]
-                    nexttwoDom.style.left = `${domLeft + domWidth + 70}px`
-                    console.log(nexttwoDom,domWidth)
+                    if (varDom.parentNode.nextSibling &&  varDom.parentNode.nextSibling.childNodes && varDom.parentNode.nextSibling.childNodes[0]) {
+                        var nextDom = varDom.parentNode.nextSibling.childNodes[0]
+                        nextDom.style.left = `${domLeft + domWidth - 16}px`
+                    }
+                    if (varDom.parentNode.nextSibling && varDom.parentNode.nextSibling.nextSibling&& varDom.parentNode.nextSibling.nextSibling.childNodes && varDom.parentNode.nextSibling.nextSibling.childNodes[0]) {
+                        var nexttwoDom = varDom.parentNode.nextSibling.nextSibling.childNodes[0]
+                        nexttwoDom.style.left = `${domLeft + domWidth + 70}px`
+                        console.log(nexttwoDom,domWidth)
+                    }
+                    
+                },
+                getVarDomYuan(){
+                    const varDomyuan = document.querySelector('.is-width')
+                    if(!varDomyuan) return
+                    let domWidthyuan = varDomyuan.clientWidth
+                    let domLeftyuan = varDomyuan.offsetLeft
+                    if (varDomyuan.parentNode.nextSibling && varDomyuan.parentNode.nextSibling.childNodes && varDomyuan.parentNode.nextSibling.childNodes[0]) {
+                        var nextDomyuan = varDomyuan.parentNode.nextSibling.childNodes[0]
+                        nextDomyuan.style.left = `${domLeftyuan + domWidthyuan +10}px`
+                        console.log(domWidthyuan,domLeftyuan)
 
+                    }
                 }
             },
             mounted () {
-                this.getVarDom()
+                this.getVarDom(),
+                this.getVarDomYuan()
             },
             template:
                 '<div>' +
                 '<custom-bg :data="data.bg"></custom-bg>' +
                 '<div v-for="(item, index) in data.els" :key="index">' +
-                '<custom-text :class="{ \'is-width-var\': item.isLengthVar }" v-if="item.type == \'text\'" :data="item"></custom-text>' +
+                '<custom-text :class="{ \'is-width-var\': item.isLengthVar, \'is-width\': item.isLength}" v-if="item.type == \'text\'" :data="item"></custom-text>' +
                 '<custom-img v-else-if="item.type == \'img\'" :data="item"></custom-img>' +
                 '<custom-qrcode v-else-if="item.type == \'qrcode\'" :data="item"></custom-qrcode>' +
                 '</div>' +
