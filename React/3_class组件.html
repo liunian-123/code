@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body id="root">
     <script src="react.development.js"></script>
     <script src="react-dom.development.js"></script>
     <script src="babel.min.js"></script>
 
     <script type="text/babel">
-        //jsx
-        let a = 10;
-        let b = 20;
+        class Hello extends React.Component {
+            constructor() {
+                super()
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>{this.props.name}</h1>
+                        <p>{this.props.content}</p>
+                    </div>
+                )
+            }
+        }
         ReactDOM.render(
-            <div>
-                <h1>标题</h1>
-                <p>段落段落段落{a+b}</p>
-                <input type="text"/>
-            </div>
+            <Hello name="组件1" content="内容"/>
             ,
             document.getElementById('root')
-        );
+
+        )
+
+
+
     </script>
 </body>
+
 </html>
