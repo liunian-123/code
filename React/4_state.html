@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="root">
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+        class Count extends React.Component {
+            constructor() {
+                super()
+                //1 初始化
+                    this.state = {
+                        num: 0,
+                        num2:2
+                    }
+               
+            }
+            render() {
+                let { num,num2 } = this.state;
+                return (
+                    <div>
+                        {
+                            //2 获取state this.state.num
+                        }
+                        <h1>{num}----{num2}</h1>
+                        <button onClick={()=>{
+                            //3 修改state中状态 setState()
+                            this.setState({
+                                num:num+1,
+                                num2:100
+                            })
+                        }}>click</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Count name="组件1" content="内容" />
+            ,
+            document.getElementById('root')
+
+        )
+
+
+
+    </script>
+</body>
+
+</html>
